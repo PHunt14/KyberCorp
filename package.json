@@ -4,7 +4,8 @@
   "description": "example node app from nodejs.org",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc server.ts"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,10 @@
   },
   "homepage": "https://github.com/PHunt14/KyberCorp#readme",
   "dependencies": {
-    "express": "4.18.2"
+    "express": "4.18.2",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "ts-node": "10.9.1"
   }
 }
