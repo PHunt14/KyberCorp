@@ -8,10 +8,10 @@ COPY package*.json ./
 
 RUN npm ci
 
-RUN npm run build
-
 # bundle the app source
 COPY . .
+
+RUN npm run build
 
 EXPOSE 8080
 
