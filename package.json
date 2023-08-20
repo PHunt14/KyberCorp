@@ -1,0 +1,25 @@
+{
+  "name": "kybercorp",
+  "version": "0.0.1",
+  "description": "example node app from nodejs.org",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PHunt14/KyberCorp.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "PHunt14",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PHunt14/KyberCorp/issues"
+  },
+  "homepage": "https://github.com/PHunt14/KyberCorp#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
