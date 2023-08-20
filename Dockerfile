@@ -8,9 +8,11 @@ COPY package*.json ./
 
 RUN npm ci
 
+RUN npm run build
+
 # bundle the app source
 COPY . .
 
 EXPOSE 8080
 
-CMD [ "node", "server.js" ]
+CMD [ "npm", "start" ]
