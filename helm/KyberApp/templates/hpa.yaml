@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "KyberApp.fullname" . }}
+  name: {{ include "kyberapp.fullname" . }}
   labels:
-    {{- include "KyberApp.labels" . | nindent 4 }}
+    {{- include "kyberapp.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "KyberApp.fullname" . }}
+    name: {{ include "kyberapp.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
