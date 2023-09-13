@@ -116,3 +116,14 @@ module "eks" {
 #     "terraform" = "true"
 #   }
 # }
+
+# create ECR
+
+resource "aws_ecr_repository" "kyber-node" {
+  name                 = "kyber-node"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = false
+  }
+}
