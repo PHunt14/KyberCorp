@@ -1,11 +1,13 @@
-# install, build, test node application
+# build and test node application
+# validate and plan infrastructure
 # create infrastructure
 # build and push docker image
+# build and lint helm charts
 # deploy node application to cluster
 
 
 
 ## future
-# run tests against node application
+# run tests against node application live
 # send test report to developers
 # destroy infrastructure
