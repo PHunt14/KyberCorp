@@ -1,0 +1,11 @@
+# install, build, test node application
+# create infrastructure
+# build and push docker image
+# deploy node application to cluster
+
+
+
+## future
+# run tests against node application
+# send test report to developers
+# destroy infrastructure
