@@ -4,17 +4,22 @@ on:
   pull_request:
 
 jobs:
-  kyberapp-test:
+  node:
 # build and test node application
     uses: ./.github/woerkflows/node.yaml
+  terraform:
 # validate and plan infrastructure
     uses: ./.github/woerkflows/terraform.yaml
+  apply:
 # create infrastructure
     uses: ./.github/woerkflows/apply.yaml
 # build and push docker image
+  docker:
     uses: ./.github/woerkflows/docker.yaml
+  helm:
 # build and lint helm charts
     uses: ./.github/woerkflows/helm.yaml
+  deploy:
 # deploy node application to cluster
     uses: ./.github/woerkflows/deploy.yaml
 
