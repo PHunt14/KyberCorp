@@ -1,0 +1,24 @@
+# build and push docker image
+
+name: Docker
+
+on: 
+  workflow_call:
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: build image
+        run: docker build -t 658192689501.dkr.ecr.us-east-1.amazonaws.com/kyberapp:node-${GITHUB_SHA} .
+
+      - name: push image
+        run: docker push 658192689501.dkr.ecr.us-east-1.amazonaws.com/kyberapp:node-${GITHUB_SHA} .
+
+      - name: retag image 
+        run: docker tag 658192689501.dkr.ecr.us-east-1.amazonaws.com/kyberapp:node-${GITHUB_SHA} 658192689501.dkr.ecr.us-east-1.amazonaws.com/kyberapp:node-dev
+
+      - name: push node-dev image tag
+        run: docker push 658192689501.dkr.ecr.us-east-1.amazonaws.com/kyberapp:node-dev

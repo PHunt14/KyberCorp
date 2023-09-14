@@ -1,0 +1,16 @@
+# build, lint, and test helm charts
+
+
+name: Helm
+
+on: 
+  workflow_call:
+jobs:
+  helm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: helm lint
+        run: helm lint helm/kyberapp

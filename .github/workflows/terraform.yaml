@@ -1,0 +1,22 @@
+# init, validate, plan
+
+name: Terraform
+
+on: 
+  workflow_call:
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: terraform init
+        run: terraform -chdir=terraform init
+
+      - name: terraform validate
+        run: terraform -chdir=terraform validate
+
+      - name: terraform plan
+        run: terraform -chdir=terraform plan
