@@ -1,1 +1,18 @@
 # deploy node application to cluster
+
+name: Deploy
+
+on: 
+  workflow_call:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: connect to EKS cluster
+        run: aws eks update-kubeconfig --name dev --region us-east-1
+
+      - name: deploy
+        run: helm upgrade  --install kyber helm/kyberapp --create-namespace --namespace node-dev

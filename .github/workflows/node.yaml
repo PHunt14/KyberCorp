@@ -1,1 +1,26 @@
 # build and test node application
+
+name: Node (TS) Build and Test
+
+on: 
+  workflow_call:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.17.1
+          cache: 'npm'
+
+      - name: install dependencies
+        run: npm ci
+
+      - name: build
+        run: npm run build
+
+      - name: unit tests
+        run: npm run test

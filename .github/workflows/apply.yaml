@@ -1,0 +1,16 @@
+# apply: create infrastructure
+
+name: Apply
+
+on: 
+  workflow_call:
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: terraform apply
+        run: terraform -chdir=terraform apply

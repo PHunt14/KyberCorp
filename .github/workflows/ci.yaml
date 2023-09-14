@@ -1,9 +1,22 @@
+- name: KyberApp CI
+
+on:
+  pull_request:
+
+jobs:
+  kyberapp-test:
 # build and test node application
+    - uses: ./.github/woerkflows/node.yaml
 # validate and plan infrastructure
+    - uses: ./.github/woerkflows/terraform.yaml
 # create infrastructure
+    - uses: ./.github/woerkflows/apply.yaml
 # build and push docker image
+    - uses: ./.github/woerkflows/docker.yaml
 # build and lint helm charts
+    - uses: ./.github/woerkflows/helm.yaml
 # deploy node application to cluster
+    - uses: ./.github/woerkflows/deploy.yaml
 
 
 
