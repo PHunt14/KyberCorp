@@ -15,7 +15,8 @@ data "aws_availability_zones" "available" {
 }
 
 locals {
-  cluster_name = "dev-eks-${random_string.suffix.result}"
+#   cluster_name = "dev-eks-${random_string.suffix.result}"
+  cluster_name = "dev"
 }
 
 resource "random_string" "suffix" {
@@ -120,7 +121,7 @@ module "eks" {
 # create ECR
 
 resource "aws_ecr_repository" "kyber-node" {
-  name                 = "kyber-node"
+  name                 = "kyberapp"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
