@@ -1,4 +1,4 @@
-- name: KyberApp CI
+name: KyberApp CI
 
 on:
   pull_request:
